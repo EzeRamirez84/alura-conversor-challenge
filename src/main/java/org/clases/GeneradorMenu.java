@@ -12,7 +12,7 @@ public class GeneradorMenu {
 
     public void mostrarMenu(){
         System.out.println("**********************************************************");
-        System.out.println("Sea bienvenido/a al Conversor de Monedas");
+        System.out.println("Sea bienvenido/a al Conversor de Monedas\n");
         System.out.println("1) Dolar =>> Peso Argentino");
         System.out.println("2) Peso Argentino =>> Dólar");
         System.out.println("3) Dólar =>> Real Brasileño");
@@ -24,5 +24,18 @@ public class GeneradorMenu {
         System.out.println("**********************************************************");
     }
 
+    public Boolean pedirOpcion(){
+        String linea = this.scanner.nextLine();
+        try {
+            this.opcion = Integer.parseInt(linea);
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        return true;
+    }
 
+    public int getOpcion() {
+        return opcion;
+    }
 }
